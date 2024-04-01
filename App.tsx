@@ -22,7 +22,6 @@ import RegisterVisitedPhoneScreen from './src/screens/Register/Visit/phone';
 import ChooseAreaScreen from './src/screens/Register/Visit/ChooseArea';
 import CameraPage from './src/components/photo/camera';
 import RegisterUserPhoto from './src/screens/Register/userFace/camera';
-import PhotoPreview from './src/screens/Register/userFace/preview';
 import KindDocumentCheckIn from './src/screens/checkIn/document/kindOfDocument';
 import DocumentCheckIn from './src/screens/checkIn/document/document';
 import VisitorProfile from './src/screens/visitorProfile';
@@ -49,6 +48,7 @@ import InitalAdm from './src/screens/settings/initialScreen';
 import MenuSettingScreen from './src/screens/settings/menu';
 import ListReportsScreen from './src/screens/settings/listReports';
 import CheckInQRcode from './src/screens/checkIn/QRcode';
+import PhotoPreviewUser from './src/screens/Register/userFace/preview';
 
 const Stack = createNativeStackNavigator()
 
@@ -58,7 +58,10 @@ export default function App() {
       <Stack.Navigator initialRouteName='LoginScreen' screenOptions={{ headerShown: false }}>
 
         <Stack.Screen name='Camera' component={RegisterUserPhoto} />
+        <Stack.Screen name='PhotoPreviewUser' component={PhotoPreviewUser} />
+
         <Stack.Screen name='DocumentCamera' component={RegisterDocumentUserPhoto} />
+        <Stack.Screen name='DocumentPhotoPreview' component={DocumentPhotoPreview} />
         <Stack.Screen name='LoginScreen' component={LoginScreen} />
         
         {/*/ ROTAS DE CADASTRO /*/} 

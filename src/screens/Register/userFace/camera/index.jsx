@@ -3,7 +3,7 @@ import CameraPage from "../../../../components/photo/camera"
 const RegisterUserPhoto = () => {
   return(
     <CameraPage
-      navigate='PhotoPreview'
+      navigate='PhotoPreviewUser'
       typeImage={true}
     />
   )

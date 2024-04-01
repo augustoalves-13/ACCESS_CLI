@@ -4,7 +4,7 @@ import UserSettings from "../../userSettings";
 import TitleScreens from "../../Title";
 import ButtonSet from "../../Buttons/ButtonSet";
 
-const PhotoPreview = ({ route , props}) => {
+const PhotoPreview = ({ route }) => {
     const { photo } = route.params;
 
     return (

@@ -7,7 +7,7 @@ import TitleScreens from "../../../../components/Title";
 import { useNavigation } from "@react-navigation/native";
 
 
-const PhotoPreview = ({ route , props}) => {
+const PhotoPreviewUser = ({ route , props}) => {
     const { photo } = route.params;
 
     const navigation = useNavigation()
@@ -20,7 +20,7 @@ const PhotoPreview = ({ route , props}) => {
                     title='Cadastro'
                     subTitle='A foto ficou boa'
                 />
-                <Image source={{ uri: photo.uri }} style={{ width: '60%', height: "50%" , borderRadius: 30}} />
+                <Image source={{ uri: photo }} style={{ width: '60%', height: "50%" , borderRadius: 30}} />
                 <ButtonSet
                     onPress={()=>{navigation.navigate('DocumentCamera')}}
                     title='Próximo'
@@ -30,4 +30,4 @@ const PhotoPreview = ({ route , props}) => {
     );
 };
 
-export default PhotoPreview
+export default PhotoPreviewUser

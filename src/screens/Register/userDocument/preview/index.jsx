@@ -20,7 +20,7 @@ const DocumentPhotoPreview = ({ route , props}) => {
                     title='Cadastro'
                     subTitle='A foto ficou boa'
                 />
-                <Image source={{ uri: photo.uri }} style={{ width: '60%', height: "50%" , borderRadius: 30}} />
+                <Image source={{ uri: photo }} style={{ width: '60%', height: "50%" , borderRadius: 30}} />
                 <ButtonSet
                     onPress={()=>{navigation.navigate('RegisterNameScreen')}}
                     title='Próximo'

@@ -1,36 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
-//import { RNCamera } from 'react-native-camera';
+import { RNCamera } from 'react-native-camera';
 import { Container } from '../../styles/styles';
 import ReturnButton from '../../Buttons/ReturnButton';
 import { useNavigation } from '@react-navigation/native';
 
 const CameraPage = ({ typeImage, navigate }) => {
-    const [hasPermission, setHasPermission] = useState(null);
     const cameraRef = useRef(null);
-    const navigation = useNavigation();
-
-    useEffect(() => {
-        (async () => {
-            const { status } = await RNCamera.requestPermissionsAsync();
-            setHasPermission(status === 'granted');
-        })();
-    }, []);
+    const navigation = useNavigation()
 
     const takePicture = async () => {
-        if (cameraRef.current) {
-            const options = { quality: 0.5, base64: true };
-            const data = await cameraRef.current.takePictureAsync(options);
-            navigation.navigate(navigate, { photo: data.uri });
-        }
+      if (cameraRef.current) {
+        const options = { quality: 0.5, base64: true };
+        const data = await cameraRef.current.takePictureAsync(options);
+        const photo = data.uri
+        navigation.navigate(navigate,{photo});
+      }
     };
-
-    if (hasPermission === null) {
-        return <View />;
-    }
-    if (hasPermission === false) {
-        return <Text>No access to camera</Text>;
-    }
 
     return (
         <Container>
